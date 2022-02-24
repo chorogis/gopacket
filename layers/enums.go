@@ -126,6 +126,7 @@ const (
 	LinkTypeFC2Framed      LinkType = 225
 	LinkTypeIPv4           LinkType = 228
 	LinkTypeIPv6           LinkType = 229
+	LinkTypeNFLog          LinkType = 239
 )
 
 // PPPoECode is the PPPoE code enum, taken from http://tools.ietf.org/html/rfc2516
@@ -385,6 +386,7 @@ func initActualTypeData() {
 	LinkTypeMetadata[LinkTypeLinuxUSB] = EnumMetadata{DecodeWith: gopacket.DecodeFunc(decodeUSB), Name: "USB"}
 	LinkTypeMetadata[LinkTypeLinuxSLL] = EnumMetadata{DecodeWith: gopacket.DecodeFunc(decodeLinuxSLL), Name: "Linux SLL"}
 	LinkTypeMetadata[LinkTypePrismHeader] = EnumMetadata{DecodeWith: gopacket.DecodeFunc(decodePrismHeader), Name: "Prism"}
+	LinkTypeMetadata[LinkTypeNFLog] = EnumMetadata{DecodeWith: gopacket.DecodeFunc(decodeNFLog), Name: "NFLog"}
 
 	FDDIFrameControlMetadata[FDDIFrameControlLLC] = EnumMetadata{DecodeWith: gopacket.DecodeFunc(decodeLLC), Name: "LLC"}
 
